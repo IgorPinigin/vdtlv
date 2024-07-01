@@ -127,6 +127,18 @@
 		line-height: 20px;
 		color: rgba(51, 51, 51, 1);
 	}
+	.card-component:active{
+		background-color: rgba(229, 229, 229, 1);
+		box-shadow: 0px 4px 16px rgba(186, 186, 186, 0.24);
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+	.card-component:active .url-text{
+		color: rgba(51, 51, 51, 0.2)
+	}
+	.card-component .url-text {
+		transition: color 0.3s ease; /* Плавное изменение цвета текста */
+	}
 	.image-card-left{
 		width: 80px;
 		height: 80px;
@@ -155,7 +167,8 @@
 		margin-top: 16px;
 		font-size: 17px;
 		font-weight: 600;
-		color: rgba(51, 51, 51, 0.2)
+		color: rgba(51, 51, 51, 0.2);
+
 	}
 }
 </style>

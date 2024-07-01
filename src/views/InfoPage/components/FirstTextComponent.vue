@@ -148,9 +148,11 @@ export default {
 		color: rgba(51, 51, 51, 1);
 		cursor: pointer;
 		border-bottom: 1.3px solid transparent;
-		transition: border-bottom 0.3s ease;
+		transition: border-bottom 0.3s ease;		
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
 	}
-	.text-with-arrow:hover{
+	.text-with-arrow:active{
 		cursor: pointer;
 		border-bottom: 1.3px solid rgba(51, 51, 51, 1);
 	}

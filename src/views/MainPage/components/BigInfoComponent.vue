@@ -7,7 +7,8 @@
 					I am a product designer with over 4 years experience in companies from different spheres (wellness, e-commerce and foodtech). I have designed interfaces (web and mobile) some startups at different stages of development: from MVP to projects with over 10 000 MAU. 
 				</span>
 				<div >
-					<span style="border-bottom: 1px solid #333333; cursor: pointer;" @click="toCV">
+					<span style="border-bottom: 1px solid #333333; cursor: pointer; 		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);" @click="toCV">
 						Check my CV</span>
 					<span>
 						or read briefly↓
@@ -361,6 +362,8 @@
 	.url-word{
 		cursor: pointer;
 		border-bottom: 1px solid #333333;
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
 	}
 	.descr{
 		color: #333333;
@@ -371,9 +374,17 @@
 		width: calc(50% - 40px); /* Минимальная ширина - половина от 100% ширины контейнера */
 		height: 44px;
 		border-radius: 16px;
-		border: 1px solid rgba(51, 51, 51, 0.1);
 		padding: 10px 16px;
+		border: 1px solid rgba(246, 243, 244, 1);
+		box-shadow: 0px 4px 16px rgba(186, 186, 186, 0.24);
 	}
+	.contact-card:active{
+		cursor: pointer;
+		box-shadow: 0px 8px 32px rgba(186, 186, 186, 0.32);
+		background-color: rgba(229, 229, 229, 0.5)
+	}
+
+
 	.cards-row{
 		width: 100%;
 		display: flex;

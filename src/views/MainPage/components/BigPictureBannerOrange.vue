@@ -39,18 +39,13 @@
 			handleScroll() {
 				const testPhotoTop = this.$refs.testPhoto.getBoundingClientRect().top;
 				const windowHeight = 1167;
-
-
 				const distanceTop = Math.max(0, windowHeight - (testPhotoTop));
 				// const distanceBottom = Math.max(0, windowHeight + testPhotoTop - windowHeight);
-
 				const maxRotationBack = -3; // максимальный наклон назад для phone-back
 				const maxRotationFront = 6; // максимальный наклон вперед для phone-front
-
 				// Коэффициенты, которые определяют, как сильно изменяется наклон в зависимости от расстояния
 				const coefficientBack = maxRotationBack / windowHeight;
 				const coefficientFront = maxRotationFront / windowHeight;
-
 				// Рассчитываем текущий наклон
 				// const rotationBack = distanceTop * coefficientBack;
 				// const rotationFront = distanceTop * coefficientFront;
@@ -75,6 +70,7 @@
 				}
 			},
 			toInfoTop(){
+				console.log('jopa')
 				this.$router.push({ name: 'infoPage', params: { scrollPosition: 'top' } })
 			},
 			toInfoCheck(){
@@ -254,11 +250,10 @@
 		font-size: 16px;
 		font-weight: 500;
 		margin-top: 4px;
-		
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
 	}
-	.text-with-arrow:hover{
-		display: none;
-	}
+	
 	.button-read{
 		display: flex;
 		background-color: rgba(255, 255, 255, 1);

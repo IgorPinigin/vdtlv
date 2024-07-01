@@ -133,11 +133,17 @@ export default {
     align-items: center;  
   }
   .contacts{
-    margin: 2px 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
     color: #33333380;
+  }
+  .contacts:active{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.16);
+    color: rgba(51, 51, 51, 0.75)
   }
   .line{
     font-size: 16px;
