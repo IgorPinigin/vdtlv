@@ -1,20 +1,13 @@
 <template>
   <div class="app">
     <div class="app-bar">
-      <div class="app-label">
+      <div class="app-label" @click="toTop">
         VDTLV
       </div>
       <div class="app-info">
-        <div class="contacts">
+        <div class="contacts" @click="toContacts">
           Contacts
         </div>
-        <div class="line">
-          |
-        </div>
-        <div class="contact">
-          RU
-        </div>
-
       </div>
     </div>
   </div>
@@ -25,6 +18,14 @@
 export default {
   data () {
     return {}
+  },
+  methods:{
+    toTop(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    toContacts(){
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
   }
 }
 </script>

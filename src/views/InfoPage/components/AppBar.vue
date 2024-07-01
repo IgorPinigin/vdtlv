@@ -1,25 +1,27 @@
 <template>
   <div class="app">
     <div class="app-bar">
-      <div class="app-label">
+      <div class="app-label" @click="toMain">
         VDTLV
       </div>
 			<div class="app-navigator">
         <div class="back" @click="toMain">Back to projects</div>
-        <div class="divider" v-if="dividerVisible">|</div>
-        <div class="right-on-trek" @click="toFirst" v-if="dividerVisible">RightOnTrek</div>
-        <div class="right-on-trek" @click="toSecond" v-if="titleFirst">Checkout update</div>
-        <div class="right-on-trek" @click="toThird" v-if="titleSecond">Gear rental portal</div>
+        <transition name="slide-fade">
+          <div class="divider" v-if="dividerVisible">|</div>
+        </transition>
+        <transition name="slide-fade">
+          <div class="right-on-trek" @click="toFirst" v-if="dividerVisible">RightOnTrek</div>
+        </transition>
+        <transition name="slide-fade">
+          <div class="right-on-trek" @click="toSecond" style="left: 252px;" v-if="titleFirst">Checkout update</div>
+        </transition>
+        <transition name="slide-fade">
+          <div class="right-on-trek" style="left: 396px;" @click="toThird" v-if="titleSecond">Gear rental portal</div>
+        </transition>
       </div>
       <div class="app-info">
-        <div class="contacts">
+        <div class="contacts" @click="toContacts">
           Contacts
-        </div>
-        <div class="line">
-          |
-        </div>
-        <div class="contacts">
-          RU
         </div>
       </div>
     </div>
@@ -32,12 +34,6 @@
       <div class="app-info">
         <div class="contacts">
           Contacts
-        </div>
-        <div class="line">
-          |
-        </div>
-        <div class="contacts">
-          RU
         </div>
       </div>
     </div>
@@ -70,7 +66,21 @@ export default {
       this.$emit('third')
     },
     toMain(){
-      this.$router.push('/main')
+      this.$router.push({ name: 'mainPage', params: { scrollPosition: 'main' } })
+    },
+    toContacts(){
+      this.$router.push({ name: 'mainPage', params: { scrollPosition: 'contacts' } })
+    }
+  },
+  watch: {
+    dividerVisible(newVal) {
+      if (newVal) {
+        this.$nextTick(() => {
+          document.querySelector('.right-on-trek').classList.add('bottom-0');
+        });
+      } else {
+        document.querySelector('.right-on-trek').classList.remove('bottom-0');
+      }
     }
   }
 }
@@ -100,6 +110,7 @@ export default {
     z-index: 1000;
   }
   .app-label{
+    cursor: pointer;
     align-items: center; 
     font-size: 16px;
     line-height: 20px;
@@ -107,30 +118,51 @@ export default {
     color: #333333;
   }
   .back{
+    line-height: 20px;
+    padding: 0px 6px;
     cursor: pointer;
+    border-radius: 4px;
+  }
+  .back:hover{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.1);
+    color: rgba(51, 51, 51, 0.75)
+  }
+  .back:active{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.16);
+    color: rgba(51, 51, 51, 0.75)
   }
   .app-navigator{
-    left: 272px;
-    position: absolute;
+    width: 748px;
+    position: relative;
     font-size: 16px;
     font-weight: 700;
     color: rgba(51, 51, 51, 0.5);
     cursor: default;
     display: flex;
+    overflow: hidden;
   }
   .divider{
+    position: absolute;
+    left: 132px;
+    bottom: 4px;
     margin-left: 8px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
   }
   .right-on-trek{
+    position: absolute;
+    bottom: 4px;
+    left: 145px;
     margin-left: 8px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
     color: rgba(51, 51, 51, 1);
     cursor: pointer;
+    transition: bottom 0.5s ease;
   }
   .app-info{
     display: flex;
@@ -138,11 +170,22 @@ export default {
     align-items: center;  
   }
   .contacts{
-    margin: 2px 6px;
+    padding: 2px 6px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
     color: #33333380;
+    border-radius: 4px;
+  }
+  .contacts:hover{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.1);
+    color: rgba(51, 51, 51, 0.75)
+  }
+  .contacts:active{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.16);
+    color: rgba(51, 51, 51, 0.75)
   }
   .line{
     font-size: 16px;
@@ -152,6 +195,15 @@ export default {
   }
   .app-mobile{
     display: none;
+  }
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    bottom: 30px;
+  }
+
+  .slide-fade-enter-active,
+  .slide-fade-leave-active {
+    transition: bottom 0.5s ease;
   }
 }
 @media screen and (max-width: 768px){

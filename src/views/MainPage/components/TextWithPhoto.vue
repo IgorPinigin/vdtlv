@@ -43,6 +43,7 @@ export default {
 		border-bottom: 2px solid transparent;
 	}
 	.underline{
+		cursor: pointer;
 		margin: 8px;
 		border-bottom: 2px solid #333333;
 		line-height: 24px;

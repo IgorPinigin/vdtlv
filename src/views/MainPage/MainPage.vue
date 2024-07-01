@@ -32,8 +32,33 @@ export default {
     BigInfoComponent,
     TextWithPhotoMobile
   },
-  created() {  
-    window.scrollTo(0, 0);
+  methods:{
+    scrollToPosition(scrollPosition) {
+      if (scrollPosition === 'main') {
+        this.$nextTick(() => {
+          window.scrollTo(0, 0); // Прокрутка в самый верх
+        });
+      } else if (scrollPosition === 'contacts') {
+        this.$nextTick(() => {
+          window.scrollTo(0, 0);
+          setTimeout(() => {window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}, 100)
+          // Прокрутка на высоту 1000px
+        });
+      } else {
+        this.$nextTick(() => {
+          window.scrollTo(0, 0); // Прокрутка в самый верх
+        });
+      }
+    }
+  },
+  created() {
+    const scrollPosition = this.$route.params.scrollPosition
+    this.scrollToPosition(scrollPosition);
+  },
+  watch: {
+    '$route.params.scrollPosition'(newValue) {
+      this.scrollToPosition(newValue);
+    }
   }
     
   

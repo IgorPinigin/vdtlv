@@ -7,7 +7,7 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes: [
       {
-        path: '/main',
+        path: '/:scrollPosition',
         name: 'mainPage',
         component: mainPage,
       },

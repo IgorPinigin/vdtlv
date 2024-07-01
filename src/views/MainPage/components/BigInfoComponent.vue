@@ -7,7 +7,7 @@
 					I am a product designer with over 4 years experience in companies from different spheres (wellness, e-commerce and foodtech). I have designed interfaces (web and mobile) some startups at different stages of development: from MVP to projects with over 10 000 MAU. 
 				</span>
 				<div >
-					<span style="border-bottom: 1px solid #333333;">
+					<span style="border-bottom: 1px solid #333333; cursor: pointer;" @click="toCV">
 						Check my CV</span>
 					<span>
 						or read briefly↓
@@ -24,7 +24,7 @@
 						since 2023
 					</div>
 					Mentoring designers at 
-					<span class="url-word">
+					<span class="url-word" @click="toHelper">
 						Helper</span>. Answered questions and held meetings with junior and middle designers to build<br> an effective development track
 				</div>
 				<div class="middle-info">
@@ -32,7 +32,7 @@
 						October 2022
 					</div>
 					Become a Product Designer <br>at
-					<span class="url-word">Fitmost</span>
+					<span class="url-word" @click="toFitmost">Fitmost</span>
 				</div>
 			</div>
 			<div class="second-row">
@@ -40,13 +40,13 @@
 					<div class="small-text">
 						September 2021 
 					</div>
-					Worked at <span class="url-word">RightOnTrek</span><br>as UI/UX Designer
+					Worked at <span class="url-word" @click="toRoT">RightOnTrek</span><br>as UI/UX Designer
 				</div>
 				<div class="small-info">
 					<div class="small-text">
 						June 2021 
 					</div>
-					Started <span class="url-word">Educt</span><br>with my folks
+					Started <span class="url-word" @click="toEduct">Educt</span> with my folks
 				</div>
 				<div class="middle-info">
 					<div class="small-text">
@@ -61,7 +61,7 @@
 		<div class="row-with-info">
 			<div class="descr">Also you can contact me at</div>
 			<div class="cards-row">
-				<div class="contact-card">
+				<div class="contact-card" @click="toTg">
 					<div class="place">
 						Telegram
 					</div>
@@ -69,7 +69,7 @@
 						@vdtlv
 					</div>
 				</div>
-				<div class="contact-card">
+				<div class="contact-card" @click="toDribble">
 					<div class="place">
 						Dribbble
 					</div>
@@ -77,7 +77,7 @@
 						@vdtlv
 					</div>
 				</div>
-				<div class="contact-card">
+				<div class="contact-card" @click="toInst">
 					<div class="place">
 						Instagram
 					</div>
@@ -85,7 +85,7 @@
 						@vdtlv
 					</div>
 				</div>
-				<div class="contact-card">
+				<div class="contact-card" @click="toGit">
 					<div class="place">
 						Github
 					</div>
@@ -93,7 +93,7 @@
 						/vdtlv
 					</div>
 				</div>
-				<div class="contact-card mail">
+				<div class="contact-card mail" @click="toMail">
 					<div class="place">
 						Mail
 					</div>
@@ -121,6 +121,41 @@
 		data(){
 			return{
 
+			}
+		},
+		methods:{
+			toTg(){
+				const telegramUsername = 'vdtlv'; // Замените на имя пользователя или бота в Telegram
+				const telegramLink = `https://t.me/${telegramUsername}`;
+				window.open(telegramLink, '_blank');
+			},
+			toDribble(){
+				window.open('https://dribbble.com/vdtlv', '_blank');
+			},
+			toInst(){
+				window.open('https://www.instagram.com/vdtlv', '_blank');
+			},
+			toGit(){
+				window.open('https://github.com/vdtlv', '_blank');
+			},
+			toHelper(){
+				window.open('https://www.gohelper.io/', '_blank');
+			},
+			toFitmost(){
+				window.open('https://fitmost.ru/', '_blank');
+			},
+			toRoT(){
+				window.open('https://rightontrek.com/', '_blank');
+			},
+			toEduct(){
+				window.open('https://educt.ru/', '_blank');
+			},
+			toMail(){
+				const email = 'contact@vdtlv.me'; // Замените на нужный email
+				const subject = encodeURIComponent('Hello!');
+				const body = encodeURIComponent('');
+				const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+				window.location.href = mailtoLink;
 			}
 		}
 	}
@@ -260,7 +295,7 @@
 }
 @media screen and (max-width: 768px){
 	.big-info-container{
-		margin-top: 64px;
+		margin-top: 110px;
 		width: calc(100% - 32px);
 		margin-left: 16px;
 		margin-right: 16px;
@@ -279,8 +314,8 @@
 		box-shadow: 0px 8px 32px rgba(186, 186, 186, 0.36);
 	}
 	.photo-text{
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 16px;
+		margin-bottom: 16px;
 		width: 100%;
 		font-size: 16px;
 		line-height: 20px;

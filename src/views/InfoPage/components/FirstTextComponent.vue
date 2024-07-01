@@ -93,7 +93,7 @@ export default {
 		font-weight: 700;
 		margin-bottom: 4px;
 		color: rgba(51, 51, 51, 1);
-		cursor: default;
+		cursor: pointer;
 		border-bottom: 1.3px solid transparent;
 		transition: border-bottom 0.3s ease;
 	}
@@ -146,11 +146,12 @@ export default {
 		font-weight: 700;
 		margin-bottom: 8px;
 		color: rgba(51, 51, 51, 1);
-		cursor: default;
+		cursor: pointer;
 		border-bottom: 1.3px solid transparent;
 		transition: border-bottom 0.3s ease;
 	}
 	.text-with-arrow:hover{
+		cursor: pointer;
 		border-bottom: 1.3px solid rgba(51, 51, 51, 1);
 	}
 }

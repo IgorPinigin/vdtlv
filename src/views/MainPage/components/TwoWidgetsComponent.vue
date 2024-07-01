@@ -104,11 +104,10 @@
 	.row-components{	
 		margin-left: auto;
 		margin-right: auto;	
-		margin-top: 32px;
+		margin-top: 64px;
 		display: flex;
 		flex-direction: column;
-		border-radius: 16px;
-		
+		border-radius: 16px;	
 		width: calc(100% - 32px);
 	}
 	.card-component{
