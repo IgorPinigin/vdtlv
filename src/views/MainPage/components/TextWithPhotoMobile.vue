@@ -52,7 +52,7 @@ export default {
 		width: calc(100%-32px);
 		font-size: 18px;
 		line-height: 32px;
-		font-weight: 600;
+		font-weight: 500;
 		align-items: center;
 		align-self: center;
 		color: rgba(51, 51, 51, 1);
@@ -62,6 +62,7 @@ export default {
 		height: 32px;
 	}
 	.row{
+		height: 32px;
 		display: flex;
 		align-items: center;
 	}

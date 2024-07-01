@@ -213,7 +213,7 @@
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 24px;
+		margin-top: 28px;
 		width: 86vw;
 		height: fit-content;
 	}
@@ -231,7 +231,7 @@
 		height: fit-content;
 		display: flex;
 		font-size: 32px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 40px;
 		color: rgba(255, 255, 255, 1);
 	}
@@ -240,7 +240,7 @@
 		display: flex;
 		margin-top: 32px;
 		font-size: 16px;
-		font-weight: 300;
+		font-weight: 400;
 		color: rgba(255, 255, 255, 1);
 		margin-bottom: 28px
 	}
@@ -248,7 +248,7 @@
 		height: fit-content;
 		color: rgba(255, 255, 255, 1);
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 600;
 		margin-top: 4px;
 		outline: none;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);

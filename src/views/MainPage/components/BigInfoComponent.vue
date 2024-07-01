@@ -397,6 +397,19 @@
 	.mail-phone{
 		width: calc(100% - 33px);
 	}
+	.place{
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 600;
+		margin-bottom: 4px;
+		color: rgba(51, 51, 51, 1);
+	}
+	.id{
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 400;
+		color: rgba(51, 51, 51, 0.5)
+	}
 }
 
 
