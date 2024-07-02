@@ -146,40 +146,95 @@
 }
 @media screen and (max-width: 768px){
 	.white-back{
-		display: none;
+		width: 100vw;
+		height: fit-content;
+		background-color: rgba(255, 255, 255, 0.75);
+		border-radius: 32px;
+		margin-bottom: 32px;
 	}
 	.column{
-		display: none;
+		position: relative;
+		width: calc(100% - 32px);
+		height: fit-content;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.title{
-		display: none;
-	}
-	.title{
-		display: none;
+		margin-top: 32px;
+		margin-bottom: 8px;
+		font-size: 24px;
+		line-height: 40px;
+		font-weight: 700;
 	}
 	.title-2{
-		display: none;
+		color: rgba(51, 51, 51, 0.5);
+		font-size: 17px;
+		font-weight: 400;
+		margin-bottom: 24px;
 	}
 	.row{
-		display: none;
+
 	}
 	.left-text{
-		display: none;
+		width: 100%;
+		margin-bottom: 8px;
+		font-size: 16px;
+		line-height: 24px;
+		color: rgba(51, 51, 51, 1);
+		font-weight: 700;
 	}
 	.right-text{
-		display: none;
+		width: 100%;
+		margin-bottom: 24px;
+		font-size: 16px;
+		line-height: 24px;
+		color: rgba(51, 51, 51, 1);
+		font-weight: 400;
 	}
 	.big-photo{
-		display: none;
+		width: 100vw;
+		height: 70vw;
+		background-color: rgba(235, 235, 235, 1);
+		position: relative;
+		margin-bottom: 24px;
 	}
 	img{
-		display: none;
+		width: 86vw;
+		height: 48vw;
+		display: flex;
+		position: absolute; /* Позиционируем изображение абсолютно относительно родительского элемента */
+		top: 50%; /* Помещаем изображение в вертикально центр родительского элемента */
+		left: 50%; /* Помещаем изображение в горизонтально центр родительского элемента */
+		transform: translate(-50%, -50%) rotate(-4.44deg);
+		box-shadow: 0px 36px 84px rgba(240, 240, 240, 1);
 	}
 	.black-text{
-		display: none;
+		font-size: 16px;
+		font-weight: 400x;
+		line-height: 24px;
+		margin-bottom: 24px;
+		color: rgba(0, 0, 0, 1)
 	}
 	.slanted-text{
-		display: none;
+		font-size: 16px;
+		font-weight: 400x;
+		line-height: 24px;
+		margin-bottom: 32px;
+		font-style: italic;
+		color: rgba(51, 51, 51, 0.5)
+	}
+	.step-number {
+		font-size: 17px;
+		line-height: 24px;
+		color: rgba(51, 51, 51, 1);
+		font-weight: 400;
+		margin-right: 6px;
+	}
+	.mobile{
+		display: flex;
+	}
+	.margin{
+		margin-bottom: 0px;
 	}
 }
 </style>

@@ -40,13 +40,23 @@ export default {
       this.dividerVisible = false
     },
     titleFirstVisible_(){
-      this.titleFirstVisible = true
+      if (window.innerWidth < 736) {
+        this.titleFirstVisible = true
+        this.titleSecondVisible = false
+      } else {
+        this.titleFirstVisible = true
+      }
     },
     titleFirstNotVisible_(){
       this.titleFirstVisible = false
     },
     titleSecondVisible_(){
-      this.titleSecondVisible = true
+      if (window.innerWidth < 736) {
+        this.titleSecondVisible = true
+        this.titleFirstVisible = false
+      } else {
+        this.titleSecondVisible = true
+      }
     },
     titleSecondNotVisible_(){
       this.titleSecondVisible = false
@@ -63,7 +73,12 @@ export default {
     toSecondText(){
       const secondTextElement = this.$refs.second.$el;
       if (secondTextElement) {
-        const top = secondTextElement.offsetTop;
+        let top = 0
+        if (window.innerWidth < 736) {
+          top = secondTextElement.offsetTop - 50;
+        } else {
+          top = secondTextElement.offsetTop;
+        }
         window.scrollTo({ top, behavior: 'smooth' });
       } else {
         console.error('Не удалось найти компонент FirstTextComponent');
@@ -71,9 +86,13 @@ export default {
     },
     toThirdText(){
       const thirdTextElement = this.$refs.third.$el; 
-      // Получаем DOM-элемент компонента FirstTextComponent
       if (thirdTextElement) {
-        const top = thirdTextElement.offsetTop; // Получаем координаты элемента
+        let top = 0
+        if (window.innerWidth < 736) {
+          top = thirdTextElement.offsetTop - 50;
+        } else {
+          top = thirdTextElement.offsetTop;
+        } // Получаем координаты элемента
         window.scrollTo({ top, behavior: 'smooth' }); // Прокручиваем страницу к элементу с плавной анимацией
       } else {
         console.error('Не удалось найти компонент FirstTextComponent');
@@ -85,13 +104,25 @@ export default {
           window.scrollTo(0, 0); // Прокрутка в самый верх
         });
       } else if (scrollPosition === 'check') {
-        this.$nextTick(() => {
-          window.scrollTo(0, 436); // Прокрутка на высоту 150px
-        });
+        if (window.innerWidth < 736) {
+          this.$nextTick(() => {
+            window.scrollTo(0, 386); // Прокрутка на высоту 150px
+          });
+        } else {
+          this.$nextTick(() => {
+            window.scrollTo(0, 436); // Прокрутка на высоту 150px
+          });
+        }
       } else if (scrollPosition === 'gear') {
-        this.$nextTick(() => {
-          window.scrollTo(0, 2474); // Прокрутка на высоту 1000px
-        });
+        if (window.innerWidth < 736) {
+          this.$nextTick(() => {
+            window.scrollTo(0, 2154); // Прокрутка на высоту 1000px
+          });
+        } else {
+          this.$nextTick(() => {
+            window.scrollTo(0, 2474); // Прокрутка на высоту 1000px
+          });
+        }
       }
     }
   },

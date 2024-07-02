@@ -28,11 +28,11 @@
   </div>
   <div class="app-mobile">
     <div class="app-bar">
-      <div class="app-label">
+      <div class="app-label" @click="toMain">
         VDTLV
       </div>
       <div class="app-info">
-        <div class="contacts">
+        <div class="contacts" @click="toContacts">
           Contacts
         </div>
       </div>
@@ -41,6 +41,7 @@
     <div class="app-navigator-mobile">
         <div class="right-on-trek" @click="toFirst" v-if="dividerVisible">RightOnTrek</div>
         <div class="right-on-trek" @click="toSecond" v-if="titleFirst">Checkout update</div>
+        <div class="right-on-trek" @click="toThird" v-if="titleSecond">Gear rental portal</div>
       </div>
   </div>
 </template>
@@ -257,11 +258,17 @@ export default {
     align-items: center;  
   }
   .contacts{
-    margin: 2px 6px;
+    padding: 2px 6px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
     color: #33333380;
+    border-radius: 4px;
+  }
+  .contacts:active{
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.16);
+    color: rgba(51, 51, 51, 0.75)
   }
   .line{
     font-size: 16px;
