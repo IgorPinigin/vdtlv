@@ -40,8 +40,9 @@
     <div class="divider" v-if="dividerVisible"></div>
     <div class="app-navigator-mobile">
         <div class="right-on-trek" @click="toFirst" v-if="dividerVisible">RightOnTrek</div>
-        <div class="right-on-trek" @click="toSecond" v-if="titleFirst">Checkout update</div>
-        <div class="right-on-trek" @click="toThird" v-if="titleSecond">Gear rental portal</div>
+        <div class="right-on-trek" style="left: 112px;" @click="toSecond" v-if="titleFirst">Checkout update</div>
+        <div class="right-on-trek" style="left: 112px;" @click="toThird" v-if="titleSecond">Gear rental portal</div>
+        
       </div>
   </div>
 </template>
@@ -240,10 +241,16 @@ export default {
     color: #333333;
   }
   .app-navigator-mobile{
+    height: 20px;
+    top: 0px;
     margin-top: 8px;
+    position: relative;
     display: flex;
+    overflow: hidden;
   }
   .right-on-trek{
+    position: absolute;
+    bottom: 0px;
     margin-right: 8px;
     font-size: 16px;
     line-height: 20px;
@@ -251,6 +258,7 @@ export default {
     color: rgba(51, 51, 51, 1);
     cursor: pointer;
     width: fit-content;
+    transition: bottom 0.5s ease;
   }
   .app-info{
     display: flex;
@@ -293,6 +301,15 @@ export default {
     width: 100%;
     height: 1px;
     background-color: rgba(51, 51, 51, 0.1);
+  }
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    bottom: 30px;
+  }
+
+  .slide-fade-enter-active,
+  .slide-fade-leave-active {
+    transition: bottom 0.5s ease;
   }
 }
 

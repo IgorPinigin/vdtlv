@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="info">
 		<AppBar 
       :dividerVisible="dividerVisible"
       :titleFirst="titleFirstVisible"
@@ -52,6 +52,7 @@ export default {
     },
     titleSecondVisible_(){
       if (window.innerWidth < 736) {
+        console.log('Второй видно')
         this.titleSecondVisible = true
         this.titleFirstVisible = false
       } else {
@@ -173,7 +174,7 @@ export default {
   font-family: 'Inter', sans-serif;
 }
 @media screen and (min-width: 768px){
-  .main {
+  .info {
     display: flex;
     flex-direction: column;
     background-color: #F1F1F1; 
@@ -183,7 +184,7 @@ export default {
   }
 }
 @media screen and (max-width: 768px){
-  .main {
+  .info {
     display: flex;
     flex-direction: column;
     background-color: #F1F1F1; 
